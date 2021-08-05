@@ -15,14 +15,18 @@ A bounding box volume is generated using the open-source granular simulation pro
 <img src="https://github.com/rtymea14/Foam-Structure-Generator/blob/main/mesh.jpg" width="350" height="175" />
 
 ## Installation
-The current version of the code uses the [OpenFOAM 2.3.1 libraries](http://www.openfoam.org/archive/2.3.1/download/source.php). It uses [isoadvector](https://github.com/isoAdvector/isoAdvector) library for interface tarcking and adection. It also calculates the thermodynamics and transport properties of gases (diffusion coefficients, thermal conductivity, heat capacities, and viscosity) based on the correlations available in the [OpenSMOKE++](https://www.opensmokepp.polimi.it) library. The coupling with the particle solver which is [LIGGGHTS](https://www.cfdem.com/liggghtsr-open-source-discrete-element-method-particle-simulation-code) is done using [CFDEM](https://www.cfdem.com/cfdemrcoupling-open-source-cfd-dem-framework) library. Once all the libraries are installed, you can proceed to install the CVOFLSDPD solver. 
+The current version of the code uses the voro++0.4.6 and pyvoro-3.7-stable. It uses python for post-processing. Both programs are uploaded and need to be installed. To install please follow the README files in the program folders. In general the steps are: configure, make and sudo make install. After installation please navigate to the [basic](Foam-Structure-Generator/voro++-0.4.6/examples/basic) folder in voro++0.4.6. It contains a import.cc file which can be compiled by typing Make. However, before compiling you must change the path for header and library in the [config.mk file](Foam-Structure-Generator/voro++-0.4.6/config.mk) and also change the path to this config.mk file in the [Makefile](Foam-Structure-Generator/voro++-0.4.6/examples/basic) in the examples/basic folder.After that compile and run the import command. After that run the two python files. A LIGGGHTS input file used to generate the sphere coordinates is also included. You can change the number of particles in the box by running the LIGGGHTS input file with LIGGGHTS. Right now only the python files for cleaning up the geomery is included. The rest of the files will be uploaded in future. 
 
 **To run the code in example/basic folder and generate the figures:**
 Navigate to a working folder in a shell terminal, clone the git code repository, and build.
 ```
-$ git clone https://github.com/rtyme14/CVOFLS-DPD.git CVOFLS-DPD
-$ cd CVOFLS-DPD/CVOFLS-DPD
-$ source Allwmake.sh
+$ cd Foam-Structure-Generator/voro++-0.4.6/examples/basic/
+$ make import
+$ ./import
+$ povray +W800 +H600 +A0.01 +Oimport.png import.pov
+$ python Nofront.py
+$ python Sphere.py
+$ povray +W800 +H600 +A0.01 +Ofoam.png foam.pov
 ```
 
 The solver can be validated using the case in the [`validation_case`](validation_case). The nanoparticle-fluid case is in the [`colloid_case`](colloid_case).  
