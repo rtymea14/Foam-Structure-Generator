@@ -4,7 +4,7 @@ Generates 3D Foam Structure using Voronoi tessellation
 ## Overview
 A 3D representative volume elements (RVEs) is generated using a combination of open-source software: [LIGGGHTS](https://www.cfdem.com/liggghtsr-open-source-discrete-element-method-particle-simulation-code), [voro++](http://math.lbl.gov/voro++/about.html), and [Blender](https://www.blender.org/). The figure below shows an example of the probability distribution for spheres that can fill up the foam space. 
 
-<img src="https://github.com/rtymea14/Foam-Structure-Generator/blob/main/SphereDist.jpg" width="49" height="49" />
+<img src="https://github.com/rtymea14/Foam-Structure-Generator/blob/main/SphereDist.jpg" width="98" height="98" />
 
 Imitating this distribution will be the first step towards generating a foam RVE. The figure below shows the procedure used for generating such RVE. 
 
