@@ -1,0 +1,73 @@
+atom_style	sphere
+atom_modify	map array
+boundary	f f f
+newton		off
+#processors   2 2 2
+
+communicate	single vel yes
+
+units		micro
+region box block -5 5 -5 5 0 10 units box
+#region box block 0 400 0 400 0 400 units box
+create_box 1 box
+variable radius equal 0.54
+variable mass equal 0.6926
+variable density equal ${mass}/(4*3.14159*${radius}*${radius}*${radius}/3)
+variable lat equal 2*${radius}
+lattice sc ${lat}
+variable cutoff equal 4*${radius}
+variable sigma equal ${cutoff}/2.5
+
+#communicate	single vel yes
+comm_modify        vel yes
+mass            1 0.6926
+group particles type 1
+fix depo particles deposit 10 1 1 29494 region box units box
+
+#pair_style lj/cut ${cutoff}
+#pair_coeff 1 1 5 ${sigma}
+#pair_modify shift yes
+
+#Material properties required for new pair styles
+fix             m1 all property/global youngsModulus peratomtype 5.e2
+fix             m2 all property/global poissonsRatio peratomtype 0.3
+fix             m3 all property/global coefficientRestitution peratomtypepair 1 0.5
+fix             m4 all property/global coefficientFriction peratomtypepair 1 0.005
+#fix             m5 all property/global characteristicVelocity scalar 1.
+fix             m6 all property/global cohesionEnergyDensity peratomtypepair 1 3e-5
+
+#pair_style      gran/hertz/history rolling_friction off cohesion sjkr #Hertzian with cohesion
+pair_style      gran/hertz/history rolling_friction off cohesion off #Hertzian with cohesion
+pair_coeff      * *
+
+#fix zwalls all wall/gran/hertz/history primitive type 1 zplane 0.0 cohesion sjkr tangential_damping on rolling_friction off
+fix zwalls all wall/gran/hertz/history primitive type 1 zplane 0.0 cohesion off tangential_damping on rolling_friction off
+
+#fix 3 walls setforce 0.0 0.0 0.0
+fix gr all gravity 1.0 vector 0 0 -1
+fix			integr all nve
+
+timestep 0.001 
+
+
+neighbor          ${lat}  bin
+neigh_modify       delay 0 every 1 
+
+compute peng all pe/atom 
+compute keng all ke/atom 
+#compute eatoms all reduce sum c_eng 
+#compute eatoms all reduce sum c_eng 
+
+#variable toteng equal c_keng + c_peng
+
+variable        toteng equal pe+ke
+thermo 10
+
+thermo_style custom step atoms pe ke v_toteng
+
+
+dump               dump_id all custom 10 box.lammpstrj type id x y z vx vy vz c_peng c_keng
+
+run 			2000
+
+write_data 		box.csv

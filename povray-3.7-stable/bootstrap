@@ -1,0 +1,34 @@
+#!/bin/sh -x
+
+# bootstrap for the source distribution of POV-Ray 3.7 for UNIX
+# Written by POV-Ray Bugtracker http://bugs.povray.org/
+# Run this script if configure.ac or any Makefile.am has changed
+
+rm -f config.log config.status
+
+# Create aclocal.m4 for extra automake and autoconf macros
+aclocal -I .
+
+# Create config.h.in
+autoheader --warnings=all
+
+# Create all Makefile.in's from Makefile.am's
+automake --add-missing --warnings=all
+
+# Create configure from configure.ac
+autoconf --warnings=all
+
+# Small post-fixes to 'configure'
+#   add --srcdir when using --help=recursive
+#   protect $ac_(pop)dir with double quotes in cd commands
+#   protect $am_aux_dir with double quotes when looking for 'missing'
+cat ./configure | sed \
+  -e 's,configure.gnu  --help=recursive,& --srcdir=$ac_srcdir,g' \
+  -e 's,\(cd \)\($ac_\)\(pop\)*\(dir\),\1"\2\3\4",g' \
+  -e 's,$am_aux_dir/missing,\\"$am_aux_dir\\"/missing,g' \
+  > ./configure.tmp
+mv -f ./configure.tmp ./configure
+chmod +x ./configure
+
+# Remove cache directory
+rm -f -r ./autom4te.cache

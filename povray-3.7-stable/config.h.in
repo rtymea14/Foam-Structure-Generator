@@ -1,0 +1,227 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Build architecture. */
+#undef BUILD_ARCH
+
+/* Supported image formats. */
+#undef BUILTIN_IMG_FORMATS
+
+/* I/O restrictions. */
+#undef BUILTIN_IO_RESTRICTIONS
+
+/* X Window display. */
+#undef BUILTIN_XWIN_DISPLAY
+
+/* Host platform. */
+#undef BUILT_FOR
+
+/* See source/octree.cpp for details. */
+#undef C99_COMPATIBLE_RADIOSITY
+
+/* Compiler vendor. */
+#undef COMPILER_VENDOR
+
+/* Compiler version (processed). */
+#undef COMPILER_VER
+
+/* Compiler version. */
+#undef COMPILER_VERSION
+
+/* Compiler flags. */
+#undef CXXFLAGS
+
+/* Who compiled this binary. */
+#undef DISTRIBUTION_MESSAGE_2
+
+/* Define to 1 if you have the `asinh' function. */
+#undef HAVE_ASINH
+
+/* define if the Boost library is available */
+#undef HAVE_BOOST
+
+/* define if the Boost::Thread library is available */
+#undef HAVE_BOOST_THREAD
+
+/* Define to 1 if you have the `clock_gettime' function. */
+#undef HAVE_CLOCK_GETTIME
+
+/* Define to 1 if you have the `copysign' function. */
+#undef HAVE_COPYSIGN
+
+/* Define to 1 if you have the `getcwd' function. */
+#undef HAVE_GETCWD
+
+/* Define to 1 if you have the `getrusage' function. */
+#undef HAVE_GETRUSAGE
+
+/* Define to 1 if you have the `gettimeofday' function. */
+#undef HAVE_GETTIMEOFDAY
+
+/* Define to 1 if you have the `ilogb' function. */
+#undef HAVE_ILOGB
+
+/* Define to 1 if you have the `ilogbf' function. */
+#undef HAVE_ILOGBF
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the `IlmImf' library (-lIlmImf). */
+#undef HAVE_LIBILMIMF
+
+/* Define to 1 if you have the `m' library (-lm). */
+#undef HAVE_LIBM
+
+/* Define to 1 if you have the `mkl' library (-lmkl). */
+#undef HAVE_LIBMKL
+
+/* Define to 1 if you have the `rt' library (-lrt). */
+#undef HAVE_LIBRT
+
+/* Define to 1 if you have the `SDL' library (-lSDL). */
+#undef HAVE_LIBSDL
+
+/* Define to 1 if you have the `Xpm' library (-lXpm). */
+#undef HAVE_LIBXPM
+
+/* Define to 1 if you have the <limits.h> header file. */
+#undef HAVE_LIMITS_H
+
+/* Define to 1 if you have the `logb' function. */
+#undef HAVE_LOGB
+
+/* Define to 1 if you have the `logbf' function. */
+#undef HAVE_LOGBF
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the `nanosleep' function. */
+#undef HAVE_NANOSLEEP
+
+/* Define if you have POSIX threads libraries and header files. */
+#undef HAVE_PTHREAD
+
+/* Define to 1 if you have the `readlink' function. */
+#undef HAVE_READLINK
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/resource.h> header file. */
+#undef HAVE_SYS_RESOURCE_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/time.h> header file. */
+#undef HAVE_SYS_TIME_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <time.h> header file. */
+#undef HAVE_TIME_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* I/O restrictions. */
+#undef IO_RESTRICTIONS_DISABLED
+
+/* Don't use libjpeg. */
+#undef LIBJPEG_MISSING
+
+/* Don't use libpng. */
+#undef LIBPNG_MISSING
+
+/* Don't use libtiff. */
+#undef LIBTIFF_MISSING
+
+/* Don't use libz. */
+#undef LIBZ_MISSING
+
+/* Unsupported image formats. */
+#undef MISSING_IMG_FORMATS
+
+/* Inverse hyperbolic functions. */
+#undef NEED_INVHYP
+
+/* Don't use OpenEXR. */
+#undef OPENEXR_MISSING
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to necessary symbol if this constant uses a non-standard name on
+   your system. */
+#undef PTHREAD_CREATE_JOINABLE
+
+/* The size of `float', as computed by sizeof. */
+#undef SIZEOF_FLOAT
+
+/* The size of `int', as computed by sizeof. */
+#undef SIZEOF_INT
+
+/* The size of `long int', as computed by sizeof. */
+#undef SIZEOF_LONG_INT
+
+/* The size of `size_t', as computed by sizeof. */
+#undef SIZEOF_SIZE_T
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
+#undef TIME_WITH_SYS_TIME
+
+/* Define to 1 if your <sys/time.h> declares `struct tm'. */
+#undef TM_IN_SYS_TIME
+
+/* Unix-specific debug messages. */
+#undef UNIX_DEBUG
+
+/* Use a watch cursor while rendering. */
+#undef USE_CURSOR
+
+/* Use the official Boost libraries. */
+#undef USE_OFFICIAL_BOOST
+
+/* Version number of package */
+#undef VERSION
+
+/* Base version number of package. */
+#undef VERSION_BASE
+
+/* Define to 1 if the X Window System is missing or not being used. */
+#undef X_DISPLAY_MISSING
+
+/* Define to `unsigned int' if <sys/types.h> does not define. */
+#undef size_t

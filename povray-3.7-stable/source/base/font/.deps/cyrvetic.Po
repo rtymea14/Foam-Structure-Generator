@@ -1,0 +1,3 @@
+base/font/cyrvetic.o: base/font/cyrvetic.cpp /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
