@@ -29,8 +29,6 @@ $ python Sphere.py
 $ povray +W800 +H600 +A0.01 +Ofoam.png foam.pov
 ```
 
-The solver can be validated using the case in the [`validation_case`](validation_case). The nanoparticle-fluid case is in the [`colloid_case`](colloid_case).  
-
 ## References
 1.  [Nie, Z., Lin, Y., and Tong, Q., 2017, "Modeling structures of open cell foams," Computational Materials Science, 131, pp. 160-169.](http://dx.doi.org/10.1016/j.commatsci.2017.01.029)
 2.  [Kasner, E., and Kalish, A., 1944, "The Geometry of the Circular Horn Triangle," National Mathematics Magazine, 18(8), pp. 299-304.](https://doi.org/10.2307/3030080)
